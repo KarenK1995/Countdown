@@ -46,14 +46,7 @@ struct CountdownList: View {
                         }
                         .frame(width: 155, height: 213)
                         .background {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(lineWidth: 0.8)
-                                .foregroundColor(Color(white: 0.9))
-                                .shadow(radius: 8, x: -3, y: 3)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .fill(.white)
-                                }
+                            CardBackground(cornerRadius: 20)
                         }
                         
                         VStack {
@@ -78,29 +71,22 @@ struct CountdownList: View {
                         }
                         .frame(width: 155, height: 213)
                         .background {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(lineWidth: 0.8)
-                                .foregroundColor(Color(white: 0.9))
-                                .shadow(radius: 8, x: -3, y: 3)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .fill(.white)
-                                }
+                            CardBackground(cornerRadius: 20)
                         }
                         
                         VStack {
-                            Text("🤝")
+                            Text("🎄")
                                 .font(.system(size: 40))
                                 .frame(width: 78, height: 78)
                                 .background {
                                     Circle()
                                         .fill(.green.opacity(0.2))
                                 }
-                            Text("Meeting")
+                            Text("Christmas")
                                 .font(.title2)
                                 .bold()
                             Text("Mon. 14 Dec 2022")
-                            Text("24 hour left")
+                            Text("24h left")
                                 .font(.headline)
                                 .frame(width: 117, height: 34)
                                 .background {
@@ -110,14 +96,34 @@ struct CountdownList: View {
                         }
                         .frame(width: 155, height: 213)
                         .background {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(lineWidth: 0.8)
-                                .foregroundColor(Color(white: 0.9))
-                                .shadow(radius: 8, x: -3, y: 3)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .fill(.white)
+                            CardBackground(cornerRadius: 20)
+                        }
+                        
+                        VStack {
+                            Image(systemName: "crown.fill")
+                                .font(.system(size: 40))
+                                .foregroundColor(.white)
+                                .frame(width: 78, height: 78)
+                                .background {
+                                    Circle()
+                                        .fill(.orange.gradient)
                                 }
+                            Text("Unlimited")
+                                .font(.title2)
+                                .bold()
+                            Text("countdowns")
+                            Text("Upgrade")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(width: 117, height: 34)
+                                .background {
+                                    Capsule()
+                                        .fill(.orange.gradient)
+                                }
+                        }
+                        .frame(width: 155, height: 213)
+                        .background {
+                            CardBackground(cornerRadius: 20)
                         }
                         
                         VStack {
@@ -132,14 +138,7 @@ struct CountdownList: View {
                         }
                         .frame(width: 155, height: 213)
                         .background {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(lineWidth: 0.8)
-                                .foregroundColor(Color(white: 0.9))
-                                .shadow(radius: 8, x: -3, y: 3)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .fill(.white)
-                                }
+                            CardBackground(cornerRadius: 20)
                         }
                     }
                     .padding()
@@ -200,14 +199,7 @@ struct CountdownList: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: 189)
                 .background {
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(lineWidth: 0.8)
-                        .foregroundColor(Color(white: 0.9))
-                        .shadow(radius: 8, x: -3, y: 3)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(.white)
-                        }
+                    CardBackground(cornerRadius: 20)
                 }
                 .padding(.horizontal)
             }
