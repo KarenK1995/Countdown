@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CountdownList: View {
+    @Environment(\.editMode) private var editMode
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
@@ -43,10 +45,30 @@ struct CountdownList: View {
                                     Capsule()
                                         .fill(.yellow.opacity(0.2))
                                 }
+                                .overlay {
+                                    if editMode?.wrappedValue.isEditing == true {
+                                        ZStack {
+                                            Capsule()
+                                                .fill(Color(white: 0.94))
+                                            Image(systemName: "pencil.circle.fill")
+                                                .imageScale(.large)
+                                                .foregroundColor(.blue)
+                                        }
+                                    }
+                                }
                         }
                         .frame(width: 155, height: 213)
                         .background {
                             CardBackground(cornerRadius: 20)
+                        }
+                        .overlay(alignment: .topLeading) {
+                            if editMode?.wrappedValue.isEditing == true {
+                                Image(systemName: "minus.circle.fill")
+                                    .imageScale(.large)
+                                    .font(.title3)
+                                    .foregroundColor(.red)
+                                    .padding(8)
+                            }
                         }
                         
                         VStack {
@@ -182,20 +204,42 @@ struct CountdownList: View {
                         }
                     }
                     .padding(.leading)
-                    
-                    Text("In other words")
-                        .textCase(.uppercase)
-                        .padding(.leading)
-                    
-                    HStack {
-                        Text("96 Months")
-                        Spacer()
-                        Text("417 Weeks")
-                        Spacer()
-                        Text("2924 Days")
+                    if editMode?.wrappedValue.isEditing == true {
+                        HStack {
+                            Capsule()
+                                .fill(.red.opacity(0.2))
+                                .frame(width: 117, height: 34)
+                            .overlay {
+                                Image(systemName: "minus.circle.fill")
+                                    .imageScale(.large)
+                                    .foregroundColor(.red)
+                            }
+                            ZStack {
+                                Capsule()
+                                    .fill(Color(white: 0.94))
+                                Image(systemName: "pencil.circle.fill")
+                                    .imageScale(.large)
+                                    .foregroundColor(.blue)
+                            }
+                            .frame(width: 117, height: 34)
+                        }
+                    } else {
+                        Group {
+                            Text("In other words")
+                                .textCase(.uppercase)
+                                .padding(.leading)
+                            
+                            HStack {
+                                Text("96 Months")
+                                Spacer()
+                                Text("417 Weeks")
+                                Spacer()
+                                Text("2924 Days")
+                            }
+                            .font(.headline)
+                            .padding(.horizontal)
+                        }
                     }
-                    .font(.headline)
-                    .padding(.horizontal)
                 }
                 .frame(maxWidth: .infinity, maxHeight: 189)
                 .background {
@@ -206,23 +250,40 @@ struct CountdownList: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading ) {
                     HStack(spacing: 25) {
-                        Circle()
-                            .fill(.gray.opacity(0.1))
-                            .frame(width: 48, height: 48)
-                            .overlay {
-                                Image(systemName: "line.3.horizontal.decrease.circle.fill")
-                                    .font(.title2)
-                                    .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
-                            }
+                        Menu {
+                            Button("Sort by closest"){}
+                            Button("Sort by latest"){}
+                        } label: {
+                            Circle()
+                                .fill(.gray.opacity(0.1))
+                                .frame(width: 48, height: 48)
+                                .overlay {
+                                    Image(systemName: "line.3.horizontal.decrease.circle.fill")
+                                        .font(.title2)
+                                        .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
+                                }
+                        }
+                        .padding(.trailing, -8)
                         
-                        Circle()
-                            .fill(.gray.opacity(0.1))
-                            .frame(width: 48, height: 48)
-                            .overlay {
-                                Image(systemName: "square.and.pencil")
-                                    .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
-                                    .fontWeight(.heavy)
+                        Button {
+                            withAnimation {
+                                if editMode?.wrappedValue.isEditing == true {
+                                    editMode?.wrappedValue = .inactive
+                                } else {
+                                    editMode?.wrappedValue = .active
+                                }
                             }
+                        } label: {
+                            Circle()
+                                .fill(.gray.opacity(0.1))
+                                .frame(width: 48, height: 48)
+                                .overlay {
+                                    Image(systemName: "square.and.pencil")
+                                        .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
+                                        .fontWeight(.heavy)
+                                }
+                        }
+                        
                         
                         Circle()
                             .fill(.gray.opacity(0.1))
