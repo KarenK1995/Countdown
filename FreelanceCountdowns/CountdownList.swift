@@ -10,6 +10,60 @@ import SwiftUI
 struct CountdownList: View {
     @Environment(\.editMode) private var editMode
     
+    struct CountdownCard: View {
+        @Environment(\.editMode) private var editMode
+        let name: String
+        let color: Color
+        let emoji: String
+        
+        var body: some View {
+            VStack {
+                Text(emoji)
+                    .font(.system(size: 40))
+                    .frame(width: 78, height: 78)
+                    .background {
+                        Circle()
+                            .fill(color)
+                    }
+                Text(name)
+                    .font(.custom("Poppins-SemiBold", size: 15))
+                Text("Mon. 14 Dec 2022")
+                    .font(.custom("Poppins-Medium", size: 12))
+                Text("24 hour left")
+                    .font(.custom("Poppins-SemiBold", size: 15))
+                    .frame(width: 117, height: 34)
+                    .background {
+                        Capsule()
+                            .fill(color)
+                    }
+                    .overlay {
+                        if editMode?.wrappedValue.isEditing == true {
+                            ZStack {
+                                Capsule()
+                                    .fill(Color(white: 0.94))
+                                Image(systemName: "pencil.circle.fill")
+                                    .imageScale(.large)
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                    }
+            }
+            .frame(width: 155, height: 213)
+            .background {
+                CardBackground(cornerRadius: 20)
+            }
+            .overlay(alignment: .topLeading) {
+                if editMode?.wrappedValue.isEditing == true {
+                    Image(systemName: "minus.circle.fill")
+                        .imageScale(.large)
+                        .font(.title3)
+                        .foregroundColor(.red)
+                        .padding(8)
+                }
+            }
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
@@ -17,109 +71,17 @@ struct CountdownList: View {
                 
                 VStack(alignment: .leading) {
                     Text("Events")
-                        .font(.title)
-                        .bold()
+                        .font(.custom("Poppins-SemiBold", size: 24))
                     Text("Countdowns")
-                        .font(.largeTitle)
+                        .font(.custom("Poppins-Regular", size: 24))
                 }
                 .padding(.leading)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        VStack {
-                            Text("🎂")
-                                .font(.system(size: 40))
-                                .frame(width: 78, height: 78)
-                                .background {
-                                    Circle()
-                                        .fill(.yellow.opacity(0.2))
-                                }
-                            Text("Alan Birthday")
-                                .font(.title2)
-                                .bold()
-                            Text("Mon. 14 Dec 2022")
-                            Text("24 hour left")
-                                .font(.headline)
-                                .frame(width: 117, height: 34)
-                                .background {
-                                    Capsule()
-                                        .fill(.yellow.opacity(0.2))
-                                }
-                                .overlay {
-                                    if editMode?.wrappedValue.isEditing == true {
-                                        ZStack {
-                                            Capsule()
-                                                .fill(Color(white: 0.94))
-                                            Image(systemName: "pencil.circle.fill")
-                                                .imageScale(.large)
-                                                .foregroundColor(.blue)
-                                        }
-                                    }
-                                }
-                        }
-                        .frame(width: 155, height: 213)
-                        .background {
-                            CardBackground(cornerRadius: 20)
-                        }
-                        .overlay(alignment: .topLeading) {
-                            if editMode?.wrappedValue.isEditing == true {
-                                Image(systemName: "minus.circle.fill")
-                                    .imageScale(.large)
-                                    .font(.title3)
-                                    .foregroundColor(.red)
-                                    .padding(8)
-                            }
-                        }
-                        
-                        VStack {
-                            Text("🎉")
-                                .font(.system(size: 40))
-                                .frame(width: 78, height: 78)
-                                .background {
-                                    Circle()
-                                        .fill(.blue.opacity(0.2))
-                                }
-                            Text("Kelly Party")
-                                .font(.title2)
-                                .bold()
-                            Text("Mon. 14 Dec 2022")
-                            Text("45 day left")
-                                .font(.headline)
-                                .frame(width: 117, height: 34)
-                                .background {
-                                    Capsule()
-                                        .fill(.blue.opacity(0.2))
-                                }
-                        }
-                        .frame(width: 155, height: 213)
-                        .background {
-                            CardBackground(cornerRadius: 20)
-                        }
-                        
-                        VStack {
-                            Text("🎄")
-                                .font(.system(size: 40))
-                                .frame(width: 78, height: 78)
-                                .background {
-                                    Circle()
-                                        .fill(.green.opacity(0.2))
-                                }
-                            Text("Christmas")
-                                .font(.title2)
-                                .bold()
-                            Text("Mon. 14 Dec 2022")
-                            Text("24h left")
-                                .font(.headline)
-                                .frame(width: 117, height: 34)
-                                .background {
-                                    Capsule()
-                                        .fill(.green.opacity(0.2))
-                                }
-                        }
-                        .frame(width: 155, height: 213)
-                        .background {
-                            CardBackground(cornerRadius: 20)
-                        }
+                        CountdownCard(name: "Alan Birthday", color: .yellow.opacity(0.2), emoji: "🎂")
+                        CountdownCard(name: "Kelly Party", color: .blue.opacity(0.2), emoji: "🎉")
+                        CountdownCard(name: "Christmas", color: .green.opacity(0.2), emoji: "🎄")
                         
                         VStack {
                             Image(systemName: "crown.fill")
@@ -131,11 +93,11 @@ struct CountdownList: View {
                                         .fill(.orange.gradient)
                                 }
                             Text("Unlimited")
-                                .font(.title2)
-                                .bold()
+                                .font(.custom("Poppins-SemiBold", size: 15))
                             Text("countdowns")
+                                .font(.custom("Poppins-Medium", size: 12))
                             Text("Upgrade")
-                                .font(.headline)
+                                .font(.custom("Poppins-SemiBold", size: 15))
                                 .foregroundColor(.white)
                                 .frame(width: 117, height: 34)
                                 .background {
@@ -170,10 +132,9 @@ struct CountdownList: View {
                 
                 VStack(alignment: .leading) {
                     Text("Relationship")
-                        .font(.title)
-                        .bold()
+                        .font(.custom("Poppins-SemiBold", size: 24))
                     Text("Counter")
-                        .font(.largeTitle)
+                        .font(.custom("Poppins-Regular", size: 24))
                 }
                 .padding(.leading)
                 
@@ -190,12 +151,12 @@ struct CountdownList: View {
                         
                         VStack(alignment: .leading) {
                             Text("Adam & Lily")
-                                .font(.title)
-                                .fontWeight(.semibold)
+                                .font(.custom("Poppins-SemiBold", size: 18))
                             Text("You have been together for")
                                 .textCase(.uppercase)
+                                .font(.custom("Poppins-Medium", size: 12))
                             Text("8 years and 2 days")
-                                .font(.headline)
+                                .font(.custom("Poppins-SemiBold", size: 14))
                                 .frame(width: 169, height: 34)
                                 .background {
                                     Capsule()
@@ -227,6 +188,7 @@ struct CountdownList: View {
                         Group {
                             Text("In other words")
                                 .textCase(.uppercase)
+                                .font(.custom("Poppins-Medium", size: 12))
                                 .padding(.leading)
                             
                             HStack {
@@ -236,7 +198,7 @@ struct CountdownList: View {
                                 Spacer()
                                 Text("2924 Days")
                             }
-                            .font(.headline)
+                            .font(.custom("Poppins-SemiBold", size: 14))
                             .padding(.horizontal)
                         }
                     }

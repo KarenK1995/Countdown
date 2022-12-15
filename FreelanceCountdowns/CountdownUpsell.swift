@@ -15,6 +15,7 @@ struct CountdownUpsell: View {
                     Text("Level up.")
                     Text("Go Premium.")
                 }
+                .font(.custom("Poppins-Semi-Bold", size: 21))
                 Spacer()
             }
             .font(.title)
@@ -22,7 +23,7 @@ struct CountdownUpsell: View {
             HStack {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Features")
-                        .font(.title2)
+                        .font(.custom("Poppins-Medium", size: 18))
                     Label {
                         Text("Remove ads")
                     } icon: {
@@ -66,10 +67,11 @@ struct CountdownUpsell: View {
                     Text("Billed annually")
                     Text("**$2.25** /year")
                 }
+                .font(.custom("Poppins-Regular", size: 15))
                 .foregroundColor(.white)
                 Spacer()
                 Text("Save 30%")
-                    .font(.headline)
+                    .font(.custom("Poppins-Medium", size: 14))
                     .foregroundColor(.purple)
                     .frame(width: 89, height: 30)
                     .background {
@@ -80,7 +82,7 @@ struct CountdownUpsell: View {
             .padding()
             .background {
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(.linearGradient(colors: [.blue, .purple], startPoint: UnitPoint(x: 0.25, y: 0.5), endPoint: UnitPoint(x: 0.75, y: 0.5)))
+                    .fill(.linearGradient(colors: [.blue, .purple], startPoint: UnitPoint(x: 0.25, y: 0.5), endPoint: UnitPoint(x: 1.25, y: 0.5)))
             }
             
             HStack {
@@ -103,11 +105,13 @@ struct CountdownUpsell: View {
                 
                 Text("Monthly Premium Membership offers $3.5 and Yearly Premium Membership offers $27 for unlocking all content, and features, and removind ads. Payment will be charged to iTunes Account at confirmation of purchase. Subscription automatically renews unless cancelled.")
                     .multilineTextAlignment(.center)
+                    .font(.custom("Poppins-Regular", size: 14))
                 
                 Text("Privacy Policy & terms of use")
                     .underline()
             }
         }
+        .font(.custom("Poppins-Regular", size: 16))
         .padding(.horizontal)
         .overlay(alignment: .topTrailing) {
             Image(systemName: "xmark.circle.fill")

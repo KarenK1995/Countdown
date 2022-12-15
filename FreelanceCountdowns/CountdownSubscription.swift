@@ -31,27 +31,25 @@ struct CountdownSubscription: View {
                         .offset(x: 10, y: -10)
                 }
             Text("Countdown")
-                .font(.title2)
-                .bold()
+                .font(.custom("Poppins-Semibold", size: 24))
             Text("Subscription")
                 .textCase(.uppercase)
-                .font(.title2)
-                .bold()
+                .font(.custom("Poppins-Bold", size: 16))
                 .foregroundColor(.orange)
             Divider()
                 .padding(.vertical)
             VStack(alignment: .leading, spacing: 10) {
                 Text("Subscription active")
-                    .font(.title2)
-                    .bold()
+                    .font(.custom("Poppins-SemiBold", size: 19))
                 Text("Thank you for choosing to upgrade. You can now enjoy all the features.")
-                    .font(.title3)
+                    .font(.custom("Poppins-Regular", size: 17))
             }
             Spacer()
-                .frame(height: 100)
+                .frame(height: 40)
             Button {
             } label: {
                 Text("Great")
+                    .font(.custom("Poppins-Regular", size: 15))
                     .frame(maxWidth: .infinity)
                     .padding(.vertical)
             }

@@ -104,9 +104,9 @@
 				8C171D71294B61EA00A059F7 /* CountdownDetail.swift */,
 				8C171D73294B628700A059F7 /* CountdownList.swift */,
 				8C171D75294B62C500A059F7 /* CountdownEditor.swift */,
-				8C9F0877294BAB6700246066 /* CountdownSubscription.swift */,
 				8C171D77294B62F800A059F7 /* CountdownUpsell.swift */,
-				8C9F0879294BD77400246066 /* Fonts */,
+				8C9F0877294BAB6700246066 /* CountdownSubscription.swift */,
+				8C9F0879294BD77400246066 /* fonts */,
 				8C171D67294A622600A059F7 /* Assets.xcassets */,
 				8C171D69294A622600A059F7 /* Preview Content */,
 			);
@@ -121,7 +121,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8C9F0879294BD77400246066 /* Fonts */ = {
+		8C9F0879294BD77400246066 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
 				8C9F0887294BD79700246066 /* Poppins-Black.ttf */,
@@ -143,7 +143,7 @@
 				8C9F087E294BD79500246066 /* Poppins-Thin.ttf */,
 				8C9F088B294BD79700246066 /* Poppins-ThinItalic.ttf */,
 			);
-			path = Fonts;
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

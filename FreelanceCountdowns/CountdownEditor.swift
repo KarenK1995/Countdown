@@ -26,8 +26,9 @@ struct CountdownEditor: View {
     var countdownName: some View {
         Group {
             Text("Countdown name")
-                .font(.title3)
+                .font(.custom("Poppins-Medium", size: 16))
             TextField("Countdown name", text: .constant(""), prompt: Text("Name your countdown"))
+                .font(.custom("Poppins-Regular", size: 16))
                 .padding(.horizontal)
                 .frame(height: 50)
                 .background {
@@ -39,7 +40,7 @@ struct CountdownEditor: View {
     var countdownDateTime: some View {
         Group {
             Text("Countdown date")
-                .font(.title3)
+                .font(.custom("Poppins-Medium", size: 16))
             DatePicker("Countdown date", selection: .constant(Date.now), displayedComponents: .date)
                 .datePickerStyle(.graphical)
                 .background {
@@ -47,8 +48,9 @@ struct CountdownEditor: View {
                 }
             
             Text("Countdown time")
-                .font(.title3)
+                .font(.custom("Poppins-Medium", size: 16))
             Toggle("All day", isOn: .constant(false))
+                .font(.custom("Poppins-Medium", size: 15))
                 .tint(.blue)
                 .padding(.horizontal)
                 .frame(height: 50)
@@ -68,8 +70,9 @@ struct CountdownEditor: View {
     var countdownReminders: some View {
         Group {
             Text("Remind me")
-                .font(.title3)
+                .font(.custom("Poppins-Medium", size: 16))
             Toggle("When the countdown finishes", isOn: .constant(true))
+                .font(.custom("Poppins-Medium", size: 15))
                 .tint(.blue)
                 .padding(.horizontal)
                 .frame(height: 50)
@@ -77,6 +80,7 @@ struct CountdownEditor: View {
                     CardBackground(cornerRadius: 10)
                 }
             Toggle("1 day before", isOn: .constant(false))
+                .font(.custom("Poppins-Medium", size: 15))
                 .tint(.blue)
                 .padding(.horizontal)
                 .frame(height: 50)
@@ -84,6 +88,7 @@ struct CountdownEditor: View {
                     CardBackground(cornerRadius: 10)
                 }
             Toggle("1 week before", isOn: .constant(false))
+                .font(.custom("Poppins-Medium", size: 15))
                 .tint(.blue)
                 .padding(.horizontal)
                 .frame(height: 50)
@@ -96,8 +101,9 @@ struct CountdownEditor: View {
     var countdownColor: some View {
         Group {
             Text("Pick a color")
-                .font(.title3)
-            ColorPicker("Pick a color", selection: .constant(.blue))
+                .font(.custom("Poppins-Medium", size: 16))
+            ColorPicker("Color", selection: .constant(.blue))
+                .font(.custom("Poppins-Medium", size: 15))
                 .padding(.horizontal)
                 .frame(height: 50)
                 .background {
@@ -113,7 +119,7 @@ struct CountdownEditor: View {
                     countdownName
                     
                     Text("Pick an emoji")
-                        .font(.title3)
+                        .font(.custom("Poppins-Medium", size: 16))
                     Image(systemName: "plus")
                         .imageScale(.small)
                         .font(.title3)
@@ -129,8 +135,9 @@ struct CountdownEditor: View {
                     
                     Group {
                         Text("Repeat")
-                            .font(.title3)
+                            .font(.custom("Poppins-Medium", size: 16))
                         Toggle("Repeat yearly", isOn: .constant(true))
+                            .font(.custom("Poppins-Medium", size: 15))
                             .tint(.blue)
                             .padding(.horizontal)
                             .frame(height: 50)
@@ -143,6 +150,7 @@ struct CountdownEditor: View {
                     
                     countdownColor
                     Text("Pick a Photo")
+                        .font(.custom("Poppins-Medium", size: 16))
                     VStack(spacing: 10) {
                         HStack(spacing: 10) {
                             RoundedRectangle(cornerRadius: 20)
@@ -189,6 +197,7 @@ struct CountdownEditor: View {
                     Button("Save") {}
                         .buttonStyle(.borderedProminent)
                         .buttonBorderShape(.capsule)
+                        .font(.custom("Poppins-Medium", size: 15))
                 }
             }
         }

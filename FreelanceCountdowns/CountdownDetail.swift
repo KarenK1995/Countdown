@@ -14,13 +14,11 @@ struct CountdownDetail: View {
                 Spacer(minLength: 40)
                 
                 HStack {
-                    VStack(alignment: .leading, spacing: 16) {
+                    VStack(alignment: .leading, spacing: 9) {
                         Text("Kelly Party")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+                            .font(.custom("Poppins-Bold", size: 29))
                         Text("Mon. 14 Dec 2022")
-                            .font(.title2)
-                            .fontWeight(.semibold)
+                            .font(.custom("Poppins-Medium", size: 22))
                             .opacity(0.7)
                     }
                     Spacer()
@@ -54,47 +52,41 @@ struct CountdownDetail: View {
                 VStack(alignment: .leading, spacing: 20) {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("1")
-                            .font(.system(size: 60))
-                            .fontWeight(.heavy)
+                            .font(.custom("Poppins-Bold", size: 57))
                         Text("Years")
-                            .font(.title)
-                            .fontWeight(.semibold)
+                            .font(.custom("Poppins-Medium", size: 24))
                             .opacity(0.7)
                     }
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
                             Text("20")
-                                .font(.largeTitle)
-                                .fontWeight(.heavy)
+                                .font(.custom("Poppins-Bold", size: 30))
                             Text("Day")
-                                .fontWeight(.semibold)
+                                .font(.custom("Poppins-Medium", size: 15))
                                 .opacity(0.7)
                         }
                         Spacer()
                         VStack(alignment: .leading, spacing: 2) {
                             Text("15")
-                                .font(.largeTitle)
-                                .fontWeight(.heavy)
+                                .font(.custom("Poppins-Bold", size: 30))
                             Text("Hour")
-                                .fontWeight(.semibold)
+                                .font(.custom("Poppins-Medium", size: 15))
                                 .opacity(0.7)
                         }
                         Spacer()
                         VStack(alignment: .leading, spacing: 2) {
                             Text("26")
-                                .font(.largeTitle)
-                                .fontWeight(.heavy)
+                                .font(.custom("Poppins-Bold", size: 30))
                             Text("Minute")
-                                .fontWeight(.semibold)
+                                .font(.custom("Poppins-Medium", size: 15))
                                 .opacity(0.7)
                         }
                         Spacer()
                         VStack(alignment: .leading, spacing: 2) {
                             Text("05")
-                                .font(.largeTitle)
-                                .fontWeight(.heavy)
+                                .font(.custom("Poppins-Bold", size: 30))
                             Text("seconds")
-                                .fontWeight(.semibold)
+                                .font(.custom("Poppins-Medium", size: 15))
                                 .opacity(0.7)
                         }
                     }
