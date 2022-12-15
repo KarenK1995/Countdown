@@ -15,6 +15,7 @@
 		8C171D74294B628700A059F7 /* CountdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D73294B628700A059F7 /* CountdownList.swift */; };
 		8C171D76294B62C500A059F7 /* CountdownEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D75294B62C500A059F7 /* CountdownEditor.swift */; };
 		8C171D78294B62F800A059F7 /* CountdownUpsell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D77294B62F800A059F7 /* CountdownUpsell.swift */; };
+		8C9F0878294BAB6700246066 /* CountdownSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F0877294BAB6700246066 /* CountdownSubscription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8C171D73294B628700A059F7 /* CountdownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownList.swift; sourceTree = "<group>"; };
 		8C171D75294B62C500A059F7 /* CountdownEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownEditor.swift; sourceTree = "<group>"; };
 		8C171D77294B62F800A059F7 /* CountdownUpsell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUpsell.swift; sourceTree = "<group>"; };
+		8C9F0877294BAB6700246066 /* CountdownSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownSubscription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				8C171D71294B61EA00A059F7 /* CountdownDetail.swift */,
 				8C171D73294B628700A059F7 /* CountdownList.swift */,
 				8C171D75294B62C500A059F7 /* CountdownEditor.swift */,
+				8C9F0877294BAB6700246066 /* CountdownSubscription.swift */,
 				8C171D77294B62F800A059F7 /* CountdownUpsell.swift */,
 				8C171D67294A622600A059F7 /* Assets.xcassets */,
 				8C171D69294A622600A059F7 /* Preview Content */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C171D78294B62F800A059F7 /* CountdownUpsell.swift in Sources */,
+				8C9F0878294BAB6700246066 /* CountdownSubscription.swift in Sources */,
 				8C171D66294A622400A059F7 /* ContentView.swift in Sources */,
 				8C171D72294B61EA00A059F7 /* CountdownDetail.swift in Sources */,
 				8C171D64294A622400A059F7 /* FreelanceCountdownsApp.swift in Sources */,
