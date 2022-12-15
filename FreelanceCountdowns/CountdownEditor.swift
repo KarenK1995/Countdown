@@ -142,6 +142,39 @@ struct CountdownEditor: View {
                     }
                     
                     countdownColor
+                    Text("Pick a Photo")
+                    VStack(spacing: 10) {
+                        HStack(spacing: 10) {
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 100, height: 100)
+                                .overlay {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .imageScale(.large)
+                                        .foregroundColor(.white)
+                                }
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 100, height: 100)
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 100, height: 100)
+                        }
+                        HStack(spacing: 10) {
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 100, height: 100)
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 100, height: 100)
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(.blue, style: StrokeStyle(lineWidth: 1.5, lineCap: .round, dash: [5, 5]))
+                                .frame(width: 100, height: 100)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(.blue.opacity(0.1))
+                                }
+                                .overlay {
+                                    Image(systemName: "photo.on.rectangle.angled")
+                                        .foregroundColor(.blue)
+                                }
+                        }
+                    }
                 }
                 .padding(.horizontal)
             }
