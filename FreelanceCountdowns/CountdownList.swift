@@ -119,6 +119,28 @@ struct CountdownList: View {
                                         .fill(.white)
                                 }
                         }
+                        
+                        VStack {
+                            Circle()
+                                .fill(.gray.opacity(0.1))
+                                .frame(width: 48, height: 48)
+                                .overlay {
+                                    Image(systemName: "plus")
+                                        .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
+                                        .fontWeight(.heavy)
+                                }
+                        }
+                        .frame(width: 155, height: 213)
+                        .background {
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(lineWidth: 0.8)
+                                .foregroundColor(Color(white: 0.9))
+                                .shadow(radius: 8, x: -3, y: 3)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(.white)
+                                }
+                        }
                     }
                     .padding()
                 }
@@ -174,9 +196,9 @@ struct CountdownList: View {
                         Text("2924 Days")
                     }
                     .font(.headline)
-                    .padding(.leading)
+                    .padding(.horizontal)
                 }
-                .frame(width: 345, height: 189)
+                .frame(maxWidth: .infinity, maxHeight: 189)
                 .background {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(lineWidth: 0.8)

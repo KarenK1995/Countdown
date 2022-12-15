@@ -61,7 +61,7 @@ struct CountdownDetail: View {
                             .fontWeight(.semibold)
                             .opacity(0.7)
                     }
-                    HStack(spacing: 40) {
+                    HStack {
                         VStack(alignment: .leading, spacing: 2) {
                             Text("20")
                                 .font(.largeTitle)
@@ -70,6 +70,7 @@ struct CountdownDetail: View {
                                 .fontWeight(.semibold)
                                 .opacity(0.7)
                         }
+                        Spacer()
                         VStack(alignment: .leading, spacing: 2) {
                             Text("15")
                                 .font(.largeTitle)
@@ -78,6 +79,7 @@ struct CountdownDetail: View {
                                 .fontWeight(.semibold)
                                 .opacity(0.7)
                         }
+                        Spacer()
                         VStack(alignment: .leading, spacing: 2) {
                             Text("26")
                                 .font(.largeTitle)
@@ -86,6 +88,7 @@ struct CountdownDetail: View {
                                 .fontWeight(.semibold)
                                 .opacity(0.7)
                         }
+                        Spacer()
                         VStack(alignment: .leading, spacing: 2) {
                             Text("05")
                                 .font(.largeTitle)
@@ -96,6 +99,7 @@ struct CountdownDetail: View {
                         }
                     }
                 }
+                .padding(.horizontal)
                 
                 Spacer()
             }
