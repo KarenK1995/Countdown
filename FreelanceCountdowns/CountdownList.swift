@@ -231,7 +231,7 @@ struct CountdownList: View {
                                 }
                             }
                         } label: {
-                            Image("edit")
+                            Image("edit.circle")
                                 .resizable()
                                 .frame(width: 48, height: 48)
                         }

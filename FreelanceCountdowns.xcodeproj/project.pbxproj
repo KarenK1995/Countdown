@@ -61,6 +61,7 @@
 		8C9F08CA294C1A6500246066 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C9F088B294BD79700246066 /* Poppins-ThinItalic.ttf */; };
 		8C9F08CC294C1F9500246066 /* CountdownWidget2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F08CB294C1F9500246066 /* CountdownWidget2.swift */; };
 		8C9F08CE294C241700246066 /* CountdownWidget3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F08CD294C241700246066 /* CountdownWidget3.swift */; };
+		8C9F08D0294D033200246066 /* CountdownDetailYellow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F08CF294D033200246066 /* CountdownDetailYellow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		8C9F08B0294C18DC00246066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C9F08CB294C1F9500246066 /* CountdownWidget2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownWidget2.swift; sourceTree = "<group>"; };
 		8C9F08CD294C241700246066 /* CountdownWidget3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownWidget3.swift; sourceTree = "<group>"; };
+		8C9F08CF294D033200246066 /* CountdownDetailYellow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailYellow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				8C171D65294A622400A059F7 /* ContentView.swift */,
 				8C171D73294B628700A059F7 /* CountdownList.swift */,
 				8C171D71294B61EA00A059F7 /* CountdownDetail.swift */,
+				8C9F08CF294D033200246066 /* CountdownDetailYellow.swift */,
 				8C171D75294B62C500A059F7 /* CountdownEditor.swift */,
 				8C171D77294B62F800A059F7 /* CountdownUpsell.swift */,
 				8C9F0877294BAB6700246066 /* CountdownSubscription.swift */,
@@ -383,6 +386,7 @@
 				8C171D72294B61EA00A059F7 /* CountdownDetail.swift in Sources */,
 				8C171D64294A622400A059F7 /* FreelanceCountdownsApp.swift in Sources */,
 				8C171D74294B628700A059F7 /* CountdownList.swift in Sources */,
+				8C9F08D0294D033200246066 /* CountdownDetailYellow.swift in Sources */,
 				8C171D76294B62C500A059F7 /* CountdownEditor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
