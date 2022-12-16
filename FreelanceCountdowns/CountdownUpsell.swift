@@ -33,6 +33,7 @@ enum CountdownColors {
     static let xGray = Color(red: 0.73, green: 0.73, blue: 0.73)
     static let textXGray = Color(red: 0.56, green: 0.56, blue: 0.58)
     static let imageGray = Color(red: 0.14, green: 0.14, blue: 0.14, opacity: 0.54)
+    static let placeholderImageBlue = Color(red: 0.95, green: 0.97, blue: 1.00)
 }
 
 struct CountdownUpsell: View {
@@ -73,6 +74,7 @@ struct CountdownUpsell: View {
                     } icon: {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(CountdownColors.orange)
+                            .padding(.trailing, -4)
                     }
                     Label {
                         Text("Unlimited countdowns")
@@ -80,6 +82,7 @@ struct CountdownUpsell: View {
                     } icon: {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(CountdownColors.orange)
+                            .padding(.trailing, -4)
                     }
                     Label {
                         Text("Widget for home screen")
@@ -87,6 +90,7 @@ struct CountdownUpsell: View {
                     } icon: {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(CountdownColors.orange)
+                            .padding(.trailing, -4)
                     }
                 }
                 Spacer()
@@ -108,7 +112,7 @@ struct CountdownUpsell: View {
                 Text("**$3.50/month**")
                     .foregroundColor(CountdownColors.darkGray)
                 + Text(". 7-day free trial")
-                Text("Recurring billing . Cancel anytime")
+                Text("Recurring billing. Cancel anytime")
             }
             .foregroundColor(CountdownColors.gray)
             
@@ -138,7 +142,7 @@ struct CountdownUpsell: View {
                 .padding()
                 .background {
                     RoundedRectangle(cornerRadius: 15)
-                        .fill(.linearGradient(colors: [CountdownColors.gradientBlue, CountdownColors.gradientPurple], startPoint: UnitPoint(x: 0.25, y: 0.5), endPoint: UnitPoint(x: 1.25, y: 0.5)))
+                        .fill(.linearGradient(colors: [CountdownColors.gradientBlue, CountdownColors.gradientPurple], startPoint: UnitPoint(x: 0.25, y: 0.5), endPoint: UnitPoint(x: 1, y: 0.5)))
                 }
                 
                 HStack {

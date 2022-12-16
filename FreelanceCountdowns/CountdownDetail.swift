@@ -132,17 +132,12 @@ struct CountdownDetail: View {
                             .frame(width: 48, height: 48)
                             .overlay {
                                 Image(systemName: "arrowshape.turn.up.right.fill")
-                                    .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
+                                    .foregroundColor(CountdownColors.linkBlue)
                             }
                         
-                        Circle()
-                            .fill(.white)
+                        Image("edit")
+                            .resizable()
                             .frame(width: 48, height: 48)
-                            .overlay {
-                                Image(systemName: "square.and.pencil")
-                                    .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
-                                    .fontWeight(.heavy)
-                            }
                     }
                     .padding(.top)
                 }

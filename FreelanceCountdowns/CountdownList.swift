@@ -91,14 +91,9 @@ struct CountdownList: View {
                         CountdownCard(name: "Christmas", color: CountdownColors.xmasGreen, textColor: CountdownColors.partyTeal, image: Image("christmas-tree"))
                         
                         VStack {
-                            Image(systemName: "crown.fill")
-                                .font(.system(size: 40))
-                                .foregroundColor(.white)
+                            Image("premium")
+                                .resizable()
                                 .frame(width: 78, height: 78)
-                                .background {
-                                    Circle()
-                                        .fill(.linearGradient(colors: [CountdownColors.gradientYellow, CountdownColors.orange], startPoint: UnitPoint(x: 0.25, y: 0.25), endPoint: UnitPoint(x: 0.75, y: 0.75)))
-                                }
                             Text("Unlimited")
                                 .font(.custom("Poppins-SemiBold", size: 15))
                             Text("countdowns")
@@ -118,14 +113,8 @@ struct CountdownList: View {
                         }
                         
                         VStack {
-                            Circle()
-                                .fill(.gray.opacity(0.1))
+                            Image("add-new")
                                 .frame(width: 48, height: 48)
-                                .overlay {
-                                    Image(systemName: "plus")
-                                        .foregroundColor(CountdownColors.gradientBlue)
-                                        .fontWeight(.heavy)
-                                }
                         }
                         .frame(width: 155, height: 213)
                         .background {
@@ -227,14 +216,9 @@ struct CountdownList: View {
                             Button("Sort by closest"){}
                             Button("Sort by latest"){}
                         } label: {
-                            Circle()
-                                .fill(.gray.opacity(0.1))
+                            Image("filter")
+                                .resizable()
                                 .frame(width: 48, height: 48)
-                                .overlay {
-                                    Image(systemName: "line.3.horizontal.decrease.circle.fill")
-                                        .font(.title2)
-                                        .foregroundColor(CountdownColors.gradientBlue)
-                                }
                         }
                         .padding(.trailing, -8)
                         
@@ -247,37 +231,22 @@ struct CountdownList: View {
                                 }
                             }
                         } label: {
-                            Circle()
-                                .fill(.gray.opacity(0.1))
+                            Image("edit")
+                                .resizable()
                                 .frame(width: 48, height: 48)
-                                .overlay {
-                                    Image(systemName: "square.and.pencil")
-                                        .foregroundColor(CountdownColors.gradientBlue)
-                                        .fontWeight(.heavy)
-                                }
                         }
+                        .padding(.trailing, -8)
                         
-                        
-                        Circle()
-                            .fill(.gray.opacity(0.1))
+                        Image("add-new")
+                            .resizable()
                             .frame(width: 48, height: 48)
-                            .overlay {
-                                Image(systemName: "plus")
-                                    .foregroundColor(CountdownColors.gradientBlue)
-                                    .fontWeight(.heavy)
-                            }
                     }
                     .padding(.top)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Circle()
-                        .fill(.linearGradient(colors: [CountdownColors.gradientYellow, CountdownColors.orange], startPoint: UnitPoint(x: 0.25, y: 0.25), endPoint: UnitPoint(x: 0.75, y: 0.75)))
+                    Image("premium")
+                        .resizable()
                         .frame(width: 48, height: 48)
-                        .overlay {
-                            Image(systemName: "crown.fill")
-                                .foregroundColor(.white)
-                                .fontWeight(.heavy)
-                        }
                         .padding(.top)
                 }
             }

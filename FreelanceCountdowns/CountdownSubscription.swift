@@ -11,14 +11,9 @@ struct CountdownSubscription: View {
     var body: some View {
         VStack(spacing: 10) {
             Spacer()
-            Circle()
-                .fill(.linearGradient(colors: [CountdownColors.gradientYellow, CountdownColors.orange], startPoint: UnitPoint(x: 0.25, y: 0.25), endPoint: UnitPoint(x: 0.75, y: 0.75)))
+            Image("premium")
+                .resizable()
                 .frame(width: 61, height: 61)
-                .overlay {
-                    Image(systemName: "crown.fill")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
                 .overlay(alignment: .topTrailing) {
                     Image(systemName: "checkmark.circle.fill")
                         .imageScale(.large)
@@ -28,7 +23,7 @@ struct CountdownSubscription: View {
                             Circle()
                                 .fill(.white)
                         }
-                        .offset(x: 5, y: -5)
+                        .offset(x: 5, y: -10)
                 }
             Text("Countdown")
                 .font(.custom("Poppins-Semibold", size: 24))

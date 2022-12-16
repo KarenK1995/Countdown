@@ -203,11 +203,13 @@ struct CountdownEditor: View {
                                 .frame(width: 108, height: 108)
                                 .background {
                                     RoundedRectangle(cornerRadius: 20)
-                                        .fill(.blue.opacity(0.1))
+                                        .fill(CountdownColors.placeholderImageBlue)
                                 }
                                 .overlay {
-                                    Image(systemName: "photo.on.rectangle.angled")
-                                        .foregroundColor(.blue)
+                                    Image("gallery-add")
+                                        .resizable()
+                                        .frame(width: 17.65, height: 17.65)
+                                        .foregroundColor(CountdownColors.linkBlue)
                                 }
                         }
                     }
