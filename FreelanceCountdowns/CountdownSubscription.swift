@@ -13,11 +13,11 @@ struct CountdownSubscription: View {
             Spacer()
             Circle()
                 .fill(.linearGradient(colors: [CountdownColors.gradientYellow, CountdownColors.orange], startPoint: UnitPoint(x: 0.25, y: 0.25), endPoint: UnitPoint(x: 0.75, y: 0.75)))
-                .frame(width: 48, height: 48)
+                .frame(width: 61, height: 61)
                 .overlay {
                     Image(systemName: "crown.fill")
+                        .font(.title)
                         .foregroundColor(.white)
-                        .fontWeight(.heavy)
                 }
                 .overlay(alignment: .topTrailing) {
                     Image(systemName: "checkmark.circle.fill")
@@ -28,7 +28,7 @@ struct CountdownSubscription: View {
                             Circle()
                                 .fill(.white)
                         }
-                        .offset(x: 10, y: -10)
+                        .offset(x: 5, y: -5)
                 }
             Text("Countdown")
                 .font(.custom("Poppins-Semibold", size: 24))
@@ -37,16 +37,17 @@ struct CountdownSubscription: View {
                 .font(.custom("Poppins-Bold", size: 24))
                 .foregroundColor(CountdownColors.orange)
             Divider()
-                .padding(.vertical)
+                .frame(height: 59)
             VStack(alignment: .leading, spacing: 10) {
                 Text("Subscription active")
                     .font(.custom("Poppins-SemiBold", size: 19))
                 Text("Thank you for choosing to upgrade. You can now enjoy all the features.")
                     .font(.custom("Poppins-Regular", size: 17))
+                    .lineSpacing(8)
                     .foregroundColor(CountdownColors.gray)
             }
             Spacer()
-                .frame(height: 40)
+                .frame(height: 20)
             Button {
             } label: {
                 Text("Great")

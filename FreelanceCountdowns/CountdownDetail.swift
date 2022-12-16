@@ -122,6 +122,7 @@ struct CountdownDetail: View {
                     Image(systemName: "chevron.left")
                         .font(.title2)
                         .foregroundColor(.black)
+                        .padding(.top)
                 }
                 ToolbarItem(placement: .navigationBarTrailing ) {
                     HStack(spacing: 25) {
@@ -142,7 +143,7 @@ struct CountdownDetail: View {
                                     .fontWeight(.heavy)
                             }
                     }
-                    
+                    .padding(.top)
                 }
             }
             .toolbarBackground(Color.clear, for: .navigationBar)

@@ -30,11 +30,16 @@ enum CountdownColors {
     static let bdayYellow = Color(red: 1.00, green: 0.96, blue: 0.83)
     static let bdayBrown = Color(red: 0.35, green: 0.25, blue: 0.21)
     static let lightRed = Color(red: 1.00, green: 0.86, blue: 0.89)
+    static let xGray = Color(red: 0.73, green: 0.73, blue: 0.73)
+    static let textXGray = Color(red: 0.56, green: 0.56, blue: 0.58)
 }
 
 struct CountdownUpsell: View {
     var body: some View {
         VStack {
+            Spacer()
+                .frame(height: 40)
+            
             HStack {
                 VStack(alignment: .leading) {
                     Text("Level up.")
@@ -43,9 +48,19 @@ struct CountdownUpsell: View {
                         .font(.custom("Poppins-Bold", size: 21))
                 }
                 .font(.custom("Poppins-SemiBold", size: 21))
+                .overlay {
+                    Circle()
+                        .trim(from: 0, to: 0.05)
+                        .stroke(style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                        .rotation(Angle(degrees: -100))
+                        .frame(width: 600, height: 600)
+                        .offset(x: 18, y: 330)
+                }
                 Spacer()
             }
-            .font(.title)
+            
+            Spacer()
+                .frame(height: 29)
             
             HStack {
                 VStack(alignment: .leading, spacing: 12) {
@@ -85,6 +100,9 @@ struct CountdownUpsell: View {
                     }
             }
             
+            Spacer()
+                .frame(height: 30)
+            
             Group {
                 Text("**$3.50/month**")
                     .foregroundColor(CountdownColors.darkGray)
@@ -93,49 +111,54 @@ struct CountdownUpsell: View {
             }
             .foregroundColor(CountdownColors.gray)
             
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Billed annually")
-                    Text("$2.25 ")
-                        .font(.custom("Poppins-SemiBold", size: 24))
-                    + Text("/year")
-                }
-                .font(.custom("Poppins-Regular", size: 15))
-                .foregroundColor(.white)
-                Spacer()
-                Text("Save 30%")
-                    .font(.custom("Poppins-Medium", size: 14))
-                    .foregroundColor(CountdownColors.purple)
-                    .frame(width: 89, height: 30)
-                    .background {
-                        Capsule()
-                            .fill(Material.thick)
+            Spacer()
+                .frame(height: 30)
+            
+            VStack(spacing: 15) {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Billed annually")
+                        Text("$2.25 ")
+                            .font(.custom("Poppins-SemiBold", size: 24))
+                        + Text("/year")
                     }
-            }
-            .padding()
-            .background {
-                RoundedRectangle(cornerRadius: 15)
-                    .fill(.linearGradient(colors: [CountdownColors.gradientBlue, CountdownColors.gradientPurple], startPoint: UnitPoint(x: 0.25, y: 0.5), endPoint: UnitPoint(x: 1.25, y: 0.5)))
-            }
-            
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Billed monthly")
-                        .foregroundColor(CountdownColors.darkGray2)
-                    Text("$3.50 ")
-                        .font(.custom("Poppins-SemiBold", size: 24))
-                    + Text("/month")
-                        .foregroundColor(CountdownColors.darkGray2)
+                    .font(.custom("Poppins-Regular", size: 15))
+                    .foregroundColor(.white)
+                    Spacer()
+                    Text("Save 30%")
+                        .font(.custom("Poppins-Medium", size: 14))
+                        .foregroundColor(CountdownColors.purple)
+                        .frame(width: 89, height: 30)
+                        .background {
+                            Capsule()
+                                .fill(Material.thick)
+                        }
                 }
-                Spacer()
-            }
-            .padding()
-            .background {
-                RoundedRectangle(cornerRadius: 15)
-                    .fill(CountdownColors.lightBlue)
+                .padding()
+                .background {
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(.linearGradient(colors: [CountdownColors.gradientBlue, CountdownColors.gradientPurple], startPoint: UnitPoint(x: 0.25, y: 0.5), endPoint: UnitPoint(x: 1.25, y: 0.5)))
+                }
+                
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Billed monthly")
+                            .foregroundColor(CountdownColors.darkGray2)
+                        Text("$3.50 ")
+                            .font(.custom("Poppins-SemiBold", size: 24))
+                        + Text("/month")
+                            .foregroundColor(CountdownColors.darkGray2)
+                    }
+                    Spacer()
+                }
+                .padding()
+                .background {
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(CountdownColors.lightBlue)
+                }
             }
             
-            Group {
+            VStack(spacing: 16) {
                 Text("Restore Purchases")
                     .underline()
                     .foregroundColor(CountdownColors.linkBlue)
@@ -148,13 +171,15 @@ struct CountdownUpsell: View {
                 Text("Privacy Policy & terms of use")
                     .underline()
             }
+            
+            Spacer()
         }
         .font(.custom("Poppins-Regular", size: 16))
         .padding(.horizontal)
         .overlay(alignment: .topTrailing) {
             Image(systemName: "xmark.circle.fill")
                 .font(.largeTitle)
-                .foregroundColor(.gray)
+                .foregroundColor(CountdownColors.xGray)
                 .padding(.trailing)
         }
     }

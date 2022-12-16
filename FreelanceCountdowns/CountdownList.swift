@@ -70,6 +70,7 @@ struct CountdownList: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 Spacer()
+                    .frame(height: 40)
                 
                 VStack(alignment: .leading) {
                     Text("Events")
@@ -78,6 +79,9 @@ struct CountdownList: View {
                         .font(.custom("Poppins-Regular", size: 24))
                 }
                 .padding(.leading)
+                
+                Spacer()
+                    .frame(height: 20)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -131,6 +135,7 @@ struct CountdownList: View {
                 }
                 
                 Spacer()
+                    .frame(height: 40)
                 
                 VStack(alignment: .leading) {
                     Text("Relationship")
@@ -215,6 +220,8 @@ struct CountdownList: View {
                     CardBackground(cornerRadius: 20)
                 }
                 .padding(.horizontal)
+                
+                Spacer()
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading ) {
@@ -263,6 +270,7 @@ struct CountdownList: View {
                                     .fontWeight(.heavy)
                             }
                     }
+                    .padding(.top)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Circle()
@@ -273,6 +281,7 @@ struct CountdownList: View {
                                 .foregroundColor(.white)
                                 .fontWeight(.heavy)
                         }
+                        .padding(.top)
                 }
             }
         }

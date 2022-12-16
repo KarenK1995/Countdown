@@ -34,6 +34,11 @@ struct CountdownEditor: View {
                 .background {
                     CardBackground(cornerRadius: 10)
                 }
+                .overlay(alignment: .trailing) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(CountdownColors.textXGray)
+                        .padding(.trailing)
+                }
         }
     }
     
