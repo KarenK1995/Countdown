@@ -32,6 +32,7 @@ enum CountdownColors {
     static let lightRed = Color(red: 1.00, green: 0.86, blue: 0.89)
     static let xGray = Color(red: 0.73, green: 0.73, blue: 0.73)
     static let textXGray = Color(red: 0.56, green: 0.56, blue: 0.58)
+    static let imageGray = Color(red: 0.14, green: 0.14, blue: 0.14, opacity: 0.54)
 }
 
 struct CountdownUpsell: View {

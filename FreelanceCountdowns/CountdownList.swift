@@ -15,12 +15,13 @@ struct CountdownList: View {
         let name: String
         let color: Color
         let textColor: Color
-        let emoji: String
+        let image: Image
         
         var body: some View {
             VStack {
-                Text(emoji)
-                    .font(.system(size: 40))
+                image
+                    .resizable()
+                    .frame(width: 56, height: 56)
                     .frame(width: 78, height: 78)
                     .background {
                         Circle()
@@ -85,9 +86,9 @@ struct CountdownList: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        CountdownCard(name: "Alan Birthday", color: CountdownColors.bdayYellow, textColor: CountdownColors.bdayBrown, emoji: "🎂")
-                        CountdownCard(name: "Kelly Party", color: CountdownColors.partyBlue, textColor: CountdownColors.partyTeal, emoji: "🎉")
-                        CountdownCard(name: "Christmas", color: CountdownColors.xmasGreen, textColor: CountdownColors.partyTeal, emoji: "🎄")
+                        CountdownCard(name: "Alan Birthday", color: CountdownColors.bdayYellow, textColor: CountdownColors.bdayBrown, image: Image("birthday-cake"))
+                        CountdownCard(name: "Kelly Party", color: CountdownColors.partyBlue, textColor: CountdownColors.partyTeal, image: Image("party-popper"))
+                        CountdownCard(name: "Christmas", color: CountdownColors.xmasGreen, textColor: CountdownColors.partyTeal, image: Image("christmas-tree"))
                         
                         VStack {
                             Image(systemName: "crown.fill")
@@ -147,14 +148,10 @@ struct CountdownList: View {
                 
                 VStack(alignment: .leading) {
                     HStack {
-                        Image(systemName: "heart.fill")
-                            .font(.system(size: 80))
-                            .foregroundColor(.pink)
+                        Image("1")
+                            .resizable()
                             .frame(width: 110, height: 110)
-                            .background {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(Color(white: 0.92))
-                            }
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                         
                         VStack(alignment: .leading) {
                             Text("Adam & Lily")

@@ -35,8 +35,9 @@ struct CountdownDetail: View {
                         .stroke(lineWidth: 12)
                         .foregroundColor(Color(red: 0.621, green: 0.906, blue: 0.984))
                     
-                    Text("🎉")
-                        .font(.system(size: 80))
+                    Image("party-popper")
+                        .resizable()
+                        .frame(width: 132, height: 132)
                     
                     Circle()
                         .trim(from: 0, to: 0.15)

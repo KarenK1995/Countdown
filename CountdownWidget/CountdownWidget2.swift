@@ -14,8 +14,9 @@ struct CountdownWidget2EntryView : View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("🎉")
-                    .font(.system(size: 30))
+                Image("party-popper")
+                    .resizable()
+                    .frame(width: 39, height: 39)
                     .frame(width: 55, height: 55)
                     .background {
                         Circle()

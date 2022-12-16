@@ -13,14 +13,11 @@ struct CountdownWidget3EntryView : View {
     
     var body: some View {
         HStack(alignment: .top) {
-            Image(systemName: "heart.fill")
-                .font(.system(size: 60))
-                .foregroundColor(CountdownColors.darkMagenta)
-                .frame(width: 105, height: 139)
-                .background {
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill(Color(white: 0.92))
-                }
+            Image("1")
+                .resizable()
+                .aspectRatio(1, contentMode: .fill)
+                .frame(width: 105, height: 128)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             
             VStack(alignment: .leading) {
                 Text("Adam & Lily")
