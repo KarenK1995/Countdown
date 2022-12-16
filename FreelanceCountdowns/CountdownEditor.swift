@@ -198,6 +198,7 @@ struct CountdownEditor: View {
                         .buttonStyle(.borderedProminent)
                         .buttonBorderShape(.capsule)
                         .font(.custom("Poppins-Medium", size: 15))
+                        .tint(CountdownColors.gradientBlue)
                 }
             }
         }

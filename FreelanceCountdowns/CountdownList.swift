@@ -14,6 +14,7 @@ struct CountdownList: View {
         @Environment(\.editMode) private var editMode
         let name: String
         let color: Color
+        let textColor: Color
         let emoji: String
         
         var body: some View {
@@ -31,6 +32,7 @@ struct CountdownList: View {
                     .font(.custom("Poppins-Medium", size: 12))
                 Text("24 hour left")
                     .font(.custom("Poppins-SemiBold", size: 15))
+                    .foregroundColor(textColor)
                     .frame(width: 117, height: 34)
                     .background {
                         Capsule()
@@ -79,9 +81,9 @@ struct CountdownList: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        CountdownCard(name: "Alan Birthday", color: .yellow.opacity(0.2), emoji: "🎂")
-                        CountdownCard(name: "Kelly Party", color: .blue.opacity(0.2), emoji: "🎉")
-                        CountdownCard(name: "Christmas", color: .green.opacity(0.2), emoji: "🎄")
+                        CountdownCard(name: "Alan Birthday", color: CountdownColors.bdayYellow, textColor: CountdownColors.bdayBrown, emoji: "🎂")
+                        CountdownCard(name: "Kelly Party", color: CountdownColors.partyBlue, textColor: CountdownColors.partyTeal, emoji: "🎉")
+                        CountdownCard(name: "Christmas", color: CountdownColors.xmasGreen, textColor: CountdownColors.partyTeal, emoji: "🎄")
                         
                         VStack {
                             Image(systemName: "crown.fill")
@@ -90,7 +92,7 @@ struct CountdownList: View {
                                 .frame(width: 78, height: 78)
                                 .background {
                                     Circle()
-                                        .fill(.orange.gradient)
+                                        .fill(.linearGradient(colors: [CountdownColors.gradientYellow, CountdownColors.orange], startPoint: UnitPoint(x: 0.25, y: 0.25), endPoint: UnitPoint(x: 0.75, y: 0.75)))
                                 }
                             Text("Unlimited")
                                 .font(.custom("Poppins-SemiBold", size: 15))
@@ -102,7 +104,7 @@ struct CountdownList: View {
                                 .frame(width: 117, height: 34)
                                 .background {
                                     Capsule()
-                                        .fill(.orange.gradient)
+                                        .fill(.linearGradient(colors: [CountdownColors.gradientYellow, CountdownColors.orange], startPoint: UnitPoint(x: -0.25, y: 0.25), endPoint: UnitPoint(x: 1, y: 0.75)))
                                 }
                         }
                         .frame(width: 155, height: 213)
@@ -116,7 +118,7 @@ struct CountdownList: View {
                                 .frame(width: 48, height: 48)
                                 .overlay {
                                     Image(systemName: "plus")
-                                        .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
+                                        .foregroundColor(CountdownColors.gradientBlue)
                                         .fontWeight(.heavy)
                                 }
                         }
@@ -154,13 +156,16 @@ struct CountdownList: View {
                                 .font(.custom("Poppins-SemiBold", size: 18))
                             Text("You have been together for")
                                 .textCase(.uppercase)
+                                .tracking(0.47)
                                 .font(.custom("Poppins-Medium", size: 12))
+                                .foregroundColor(CountdownColors.midGray)
                             Text("8 years and 2 days")
                                 .font(.custom("Poppins-SemiBold", size: 14))
+                                .foregroundColor(CountdownColors.darkMagenta)
                                 .frame(width: 169, height: 34)
                                 .background {
                                     Capsule()
-                                        .fill(.pink.opacity(0.2))
+                                        .fill(CountdownColors.lightPink)
                                 }
                         }
                     }
@@ -168,7 +173,7 @@ struct CountdownList: View {
                     if editMode?.wrappedValue.isEditing == true {
                         HStack {
                             Capsule()
-                                .fill(.red.opacity(0.2))
+                                .fill(CountdownColors.lightRed)
                                 .frame(width: 117, height: 34)
                             .overlay {
                                 Image(systemName: "minus.circle.fill")
@@ -189,6 +194,8 @@ struct CountdownList: View {
                             Text("In other words")
                                 .textCase(.uppercase)
                                 .font(.custom("Poppins-Medium", size: 12))
+                                .tracking(0.47)
+                                .foregroundColor(CountdownColors.midGray)
                                 .padding(.leading)
                             
                             HStack {
@@ -222,7 +229,7 @@ struct CountdownList: View {
                                 .overlay {
                                     Image(systemName: "line.3.horizontal.decrease.circle.fill")
                                         .font(.title2)
-                                        .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
+                                        .foregroundColor(CountdownColors.gradientBlue)
                                 }
                         }
                         .padding(.trailing, -8)
@@ -241,7 +248,7 @@ struct CountdownList: View {
                                 .frame(width: 48, height: 48)
                                 .overlay {
                                     Image(systemName: "square.and.pencil")
-                                        .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
+                                        .foregroundColor(CountdownColors.gradientBlue)
                                         .fontWeight(.heavy)
                                 }
                         }
@@ -252,14 +259,14 @@ struct CountdownList: View {
                             .frame(width: 48, height: 48)
                             .overlay {
                                 Image(systemName: "plus")
-                                    .foregroundColor(Color(red: 0.164, green: 0.613, blue: 0.977))
+                                    .foregroundColor(CountdownColors.gradientBlue)
                                     .fontWeight(.heavy)
                             }
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Circle()
-                        .fill(.orange.gradient)
+                        .fill(.linearGradient(colors: [CountdownColors.gradientYellow, CountdownColors.orange], startPoint: UnitPoint(x: 0.25, y: 0.25), endPoint: UnitPoint(x: 0.75, y: 0.75)))
                         .frame(width: 48, height: 48)
                         .overlay {
                             Image(systemName: "crown.fill")

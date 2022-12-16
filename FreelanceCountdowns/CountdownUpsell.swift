@@ -7,15 +7,42 @@
 
 import SwiftUI
 
+enum CountdownColors {
+    static let orange = Color(red: 1.00, green: 0.54, blue: 0.10)
+    static let mint = Color(red: 0.08, green: 0.81, blue: 0.61)
+    static let gray = Color(red: 0.39, green: 0.39, blue: 0.40)
+    static let gradientBlue = Color(red: 0.00, green: 0.48, blue: 1.00)
+    static let gradientPurple = Color(red: 0.38, green: 0.06, blue: 0.93)
+    static let purple = Color(red: 0.18, green: 0.28, blue: 0.97)
+    static let lightPink = Color(red: 1.00, green: 0.85, blue: 0.93)
+    static let darkMagenta = Color(red: 0.42, green: 0.02, blue: 0.48)
+    static let gradientYellow = Color(red: 1.00, green: 0.85, blue: 0.23)
+    static let lightBlue = Color(red: 0.86, green: 0.93, blue: 1.00)
+    static let partyBlue = Color(red: 0.81, green: 0.94, blue: 1.00)
+    static let partyTeal = Color(red: 0.05, green: 0.51, blue: 0.75)
+    static let linkBlue = Color(red: 0.01, green: 0.46, blue: 1.00)
+    static let borderLightGray = Color(red: 0.95, green: 0.95, blue: 0.97)
+    static let lightGray = Color(red: 0.97, green: 0.97, blue: 0.97)
+    static let darkGray = Color(red: 0.35, green: 0.35, blue: 0.35)
+    static let darkGray2 = Color(red: 0.28, green: 0.28, blue: 0.29)
+    static let midGray = Color(red: 0.42, green: 0.42, blue: 0.42)
+    static let xmasGreen = Color(red: 0.81, green: 1.00, blue: 0.89)
+    static let bdayYellow = Color(red: 1.00, green: 0.96, blue: 0.83)
+    static let bdayBrown = Color(red: 0.35, green: 0.25, blue: 0.21)
+    static let lightRed = Color(red: 1.00, green: 0.86, blue: 0.89)
+}
+
 struct CountdownUpsell: View {
     var body: some View {
         VStack {
             HStack {
                 VStack(alignment: .leading) {
                     Text("Level up.")
-                    Text("Go Premium.")
+                    Text("Go ") + Text("Premium")
+                        .foregroundColor(CountdownColors.orange)
+                        .font(.custom("Poppins-Bold", size: 21))
                 }
-                .font(.custom("Poppins-Semi-Bold", size: 21))
+                .font(.custom("Poppins-SemiBold", size: 21))
                 Spacer()
             }
             .font(.title)
@@ -26,21 +53,24 @@ struct CountdownUpsell: View {
                         .font(.custom("Poppins-Medium", size: 18))
                     Label {
                         Text("Remove ads")
+                            .foregroundColor(CountdownColors.darkGray2)
                     } icon: {
                         Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.orange)
+                            .foregroundColor(CountdownColors.orange)
                     }
                     Label {
                         Text("Unlimited countdowns")
+                            .foregroundColor(CountdownColors.darkGray2)
                     } icon: {
                         Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.orange)
+                            .foregroundColor(CountdownColors.orange)
                     }
                     Label {
                         Text("Widget for home screen")
+                            .foregroundColor(CountdownColors.darkGray2)
                     } icon: {
                         Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.orange)
+                            .foregroundColor(CountdownColors.orange)
                     }
                 }
                 Spacer()
@@ -48,64 +78,72 @@ struct CountdownUpsell: View {
             .padding()
             .background {
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(lineWidth: 0.8)
-                    .foregroundColor(Color(white: 0.9))
-                    .shadow(radius: 8, x: -3, y: 3)
+                    .stroke(CountdownColors.borderLightGray, lineWidth: 1)
                     .overlay {
                         RoundedRectangle(cornerRadius: 20)
-                            .fill(Color(white: 0.96))
+                            .fill(CountdownColors.lightGray)
                     }
             }
             
             Group {
-                Text("**$3.5/month** . 7-day free trial")
+                Text("**$3.50/month**")
+                    .foregroundColor(CountdownColors.darkGray)
+                + Text(". 7-day free trial")
                 Text("Recurring billing . Cancel anytime")
             }
+            .foregroundColor(CountdownColors.gray)
             
             HStack {
                 VStack(alignment: .leading) {
                     Text("Billed annually")
-                    Text("**$2.25** /year")
+                    Text("$2.25 ")
+                        .font(.custom("Poppins-SemiBold", size: 24))
+                    + Text("/year")
                 }
                 .font(.custom("Poppins-Regular", size: 15))
                 .foregroundColor(.white)
                 Spacer()
                 Text("Save 30%")
                     .font(.custom("Poppins-Medium", size: 14))
-                    .foregroundColor(.purple)
+                    .foregroundColor(CountdownColors.purple)
                     .frame(width: 89, height: 30)
                     .background {
                         Capsule()
-                            .fill(.white)
+                            .fill(Material.thick)
                     }
             }
             .padding()
             .background {
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(.linearGradient(colors: [.blue, .purple], startPoint: UnitPoint(x: 0.25, y: 0.5), endPoint: UnitPoint(x: 1.25, y: 0.5)))
+                    .fill(.linearGradient(colors: [CountdownColors.gradientBlue, CountdownColors.gradientPurple], startPoint: UnitPoint(x: 0.25, y: 0.5), endPoint: UnitPoint(x: 1.25, y: 0.5)))
             }
             
             HStack {
                 VStack(alignment: .leading) {
                     Text("Billed monthly")
-                    Text("**$3.5** /month")
+                        .foregroundColor(CountdownColors.darkGray2)
+                    Text("$3.50 ")
+                        .font(.custom("Poppins-SemiBold", size: 24))
+                    + Text("/month")
+                        .foregroundColor(CountdownColors.darkGray2)
                 }
                 Spacer()
             }
             .padding()
             .background {
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(.blue.opacity(0.2))
+                    .fill(CountdownColors.lightBlue)
             }
             
             Group {
                 Text("Restore Purchases")
                     .underline()
-                    .foregroundColor(.blue)
+                    .foregroundColor(CountdownColors.linkBlue)
                 
                 Text("Monthly Premium Membership offers $3.5 and Yearly Premium Membership offers $27 for unlocking all content, and features, and removind ads. Payment will be charged to iTunes Account at confirmation of purchase. Subscription automatically renews unless cancelled.")
                     .multilineTextAlignment(.center)
                     .font(.custom("Poppins-Regular", size: 14))
+                    .foregroundColor(CountdownColors.gray)
                 
                 Text("Privacy Policy & terms of use")
                     .underline()
