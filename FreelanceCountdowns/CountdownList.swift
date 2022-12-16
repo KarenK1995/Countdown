@@ -44,8 +44,7 @@ struct CountdownList: View {
                             ZStack {
                                 Capsule()
                                     .fill(Color(white: 0.94))
-                                Image(systemName: "pencil.circle.fill")
-                                    .imageScale(.large)
+                                Image("edit.circle")
                                     .foregroundColor(.blue)
                             }
                         }
@@ -87,8 +86,11 @@ struct CountdownList: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         CountdownCard(name: "Alan Birthday", color: CountdownColors.bdayYellow, textColor: CountdownColors.bdayBrown, image: Image("birthday-cake"))
+                            .environment(\.editMode, editMode)
                         CountdownCard(name: "Kelly Party", color: CountdownColors.partyBlue, textColor: CountdownColors.partyTeal, image: Image("party-popper"))
+                            .environment(\.editMode, editMode)
                         CountdownCard(name: "Christmas", color: CountdownColors.xmasGreen, textColor: CountdownColors.partyTeal, image: Image("christmas-tree"))
+                            .environment(\.editMode, editMode)
                         
                         VStack {
                             Image("premium")
@@ -163,6 +165,7 @@ struct CountdownList: View {
                     .padding(.leading)
                     if editMode?.wrappedValue.isEditing == true {
                         HStack {
+                            Spacer()
                             Capsule()
                                 .fill(CountdownColors.lightRed)
                                 .frame(width: 117, height: 34)
@@ -171,14 +174,16 @@ struct CountdownList: View {
                                     .imageScale(.large)
                                     .foregroundColor(.red)
                             }
+                            Spacer()
                             ZStack {
                                 Capsule()
                                     .fill(Color(white: 0.94))
-                                Image(systemName: "pencil.circle.fill")
+                                Image("edit.circle")
                                     .imageScale(.large)
                                     .foregroundColor(.blue)
                             }
                             .frame(width: 117, height: 34)
+                            Spacer()
                         }
                     } else {
                         Group {
