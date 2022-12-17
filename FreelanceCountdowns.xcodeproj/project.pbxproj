@@ -153,7 +153,7 @@
 		8C171D57294A622400A059F7 = {
 			isa = PBXGroup;
 			children = (
-				8C171D62294A622400A059F7 /* FreelanceCountdowns */,
+				8C171D62294A622400A059F7 /* Countdowns */,
 				8C9F08A9294C18DA00246066 /* CountdownWidget */,
 				8C9F08A4294C18DA00246066 /* Frameworks */,
 				8C171D61294A622400A059F7 /* Products */,
@@ -169,7 +169,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8C171D62294A622400A059F7 /* FreelanceCountdowns */ = {
+		8C171D62294A622400A059F7 /* Countdowns */ = {
 			isa = PBXGroup;
 			children = (
 				8C9F089E294BD85600246066 /* Info.plist */,
@@ -185,7 +185,7 @@
 				8C171D67294A622600A059F7 /* Assets.xcassets */,
 				8C171D69294A622600A059F7 /* Preview Content */,
 			);
-			path = FreelanceCountdowns;
+			path = Countdowns;
 			sourceTree = "<group>";
 		};
 		8C171D69294A622600A059F7 /* Preview Content */ = {
