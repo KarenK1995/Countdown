@@ -1,6 +1,6 @@
 //
-//  FreelanceCountdownsApp.swift
-//  FreelanceCountdowns
+//  CountdownsApp.swift
+//  Countdowns
 //
 //  Created by Kuba Szulaczkowski on 12/14/22.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct FreelanceCountdownsApp: App {
+struct CountdownsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
