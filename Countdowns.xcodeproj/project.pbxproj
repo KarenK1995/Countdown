@@ -89,7 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8C171D60294A622400A059F7 /* FreelanceCountdowns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreelanceCountdowns.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C171D60294A622400A059F7 /* Countdowns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdowns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C171D63294A622400A059F7 /* CountdownsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsApp.swift; sourceTree = "<group>"; };
 		8C171D65294A622400A059F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8C171D67294A622600A059F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		8C171D61294A622400A059F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C171D60294A622400A059F7 /* FreelanceCountdowns.app */,
+				8C171D60294A622400A059F7 /* Countdowns.app */,
 				8C9F08A3294C18DA00246066 /* CountdownWidgetExtension.appex */,
 			);
 			name = Products;
@@ -246,9 +246,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C171D5F294A622400A059F7 /* FreelanceCountdowns */ = {
+		8C171D5F294A622400A059F7 /* Countdowns */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C171D6E294A622600A059F7 /* Build configuration list for PBXNativeTarget "FreelanceCountdowns" */;
+			buildConfigurationList = 8C171D6E294A622600A059F7 /* Build configuration list for PBXNativeTarget "Countdowns" */;
 			buildPhases = (
 				8C171D5C294A622400A059F7 /* Sources */,
 				8C171D5D294A622400A059F7 /* Frameworks */,
@@ -260,9 +260,9 @@
 			dependencies = (
 				8C9F08B2294C18DC00246066 /* PBXTargetDependency */,
 			);
-			name = FreelanceCountdowns;
+			name = Countdowns;
 			productName = FreelanceCountdowns;
-			productReference = 8C171D60294A622400A059F7 /* FreelanceCountdowns.app */;
+			productReference = 8C171D60294A622400A059F7 /* Countdowns.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8C9F08A2294C18DA00246066 /* CountdownWidgetExtension */ = {
@@ -300,7 +300,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8C171D5B294A622400A059F7 /* Build configuration list for PBXProject "FreelanceCountdowns" */;
+			buildConfigurationList = 8C171D5B294A622400A059F7 /* Build configuration list for PBXProject "Countdowns" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -313,7 +313,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8C171D5F294A622400A059F7 /* FreelanceCountdowns */,
+				8C171D5F294A622400A059F7 /* Countdowns */,
 				8C9F08A2294C18DA00246066 /* CountdownWidgetExtension */,
 			);
 		};
@@ -647,7 +647,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C171D5B294A622400A059F7 /* Build configuration list for PBXProject "FreelanceCountdowns" */ = {
+		8C171D5B294A622400A059F7 /* Build configuration list for PBXProject "Countdowns" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C171D6C294A622600A059F7 /* Debug */,
@@ -656,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C171D6E294A622600A059F7 /* Build configuration list for PBXNativeTarget "FreelanceCountdowns" */ = {
+		8C171D6E294A622600A059F7 /* Build configuration list for PBXNativeTarget "Countdowns" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C171D6F294A622600A059F7 /* Debug */,
