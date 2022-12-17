@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  FreelanceCountdowns
+//  Countdowns
 //
 //  Created by Kuba Szulaczkowski on 12/14/22.
 //

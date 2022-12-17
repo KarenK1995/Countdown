@@ -1,6 +1,6 @@
 //
 //  CountdownList.swift
-//  FreelanceCountdowns
+//  Countdowns
 //
 //  Created by Kuba Szulaczkowski on 12/15/22.
 //
