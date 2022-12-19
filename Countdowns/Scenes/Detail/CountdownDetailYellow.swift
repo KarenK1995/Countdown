@@ -12,19 +12,19 @@ struct CountdownDetailYellow: View {
         NavigationStack {
             VStack {
                 Spacer(minLength: 40)
-                CountdownDetail.Header(name: "Alan Birthday", date: "Mon. 14 Dec 2022", secondaryColor: CountdownColors.bdayBrown)
+                CountdownHeader(name: "Alan Birthday", date: "Mon. 14 Dec 2022", secondaryColor: CountdownColors.bdayBrown)
                 Spacer()
-                CountdownDetail.ProgressCircle(image: Image("birthday-cake"), progressColor: CountdownColors.bdayProgress, fillColor: CountdownColors.bdayBubble, strokeColor: CountdownColors.bdayStroke)
+                ProgressCircle(image: Image("birthday-cake"), progressColor: CountdownColors.bdayProgress, fillColor: CountdownColors.bdayBubble, strokeColor: CountdownColors.bdayStroke)
                 Spacer()
-                CountdownDetail.CountdownNumbers(secondaryColor: CountdownColors.bdayBrown)
+                CountdownNumbers(secondaryColor: CountdownColors.bdayBrown)
                 Spacer()
             }
             .background {
-                CountdownDetail.BubbleBackground(bubbleColor: CountdownColors.bdayBubble, bgColor: CountdownColors.bdayYellow)
+                BubbleBackground(bubbleColor: CountdownColors.bdayBubble, bgColor: CountdownColors.bdayYellow)
             }
             .navigationBarBackButtonHidden()
             .toolbar {
-                CountdownDetail.Toolbar(color: CountdownColors.bdayProgress)
+                DetailToolbar(color: CountdownColors.bdayProgress)
             }
             .toolbarBackground(Color.clear, for: .navigationBar)
         }
