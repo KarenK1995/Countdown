@@ -15,6 +15,7 @@
 		8C171D74294B628700A059F7 /* CountdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D73294B628700A059F7 /* CountdownList.swift */; };
 		8C171D76294B62C500A059F7 /* CountdownEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D75294B62C500A059F7 /* CountdownEditor.swift */; };
 		8C171D78294B62F800A059F7 /* CountdownUpsell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D77294B62F800A059F7 /* CountdownUpsell.swift */; };
+		8C6781B4295035BF00F2B670 /* CountdownSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F0877294BAB6700246066 /* CountdownSubscription.swift */; };
 		8C9F0878294BAB6700246066 /* CountdownSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F0877294BAB6700246066 /* CountdownSubscription.swift */; };
 		8C9F088C294BD79700246066 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C9F087A294BD79500246066 /* Poppins-Bold.ttf */; };
 		8C9F088D294BD79700246066 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C9F087B294BD79500246066 /* Poppins-LightItalic.ttf */; };
@@ -172,15 +173,10 @@
 		8C171D62294A622400A059F7 /* Countdowns */ = {
 			isa = PBXGroup;
 			children = (
+				8C6781B02950354400F2B670 /* Scenes */,
 				8C9F089E294BD85600246066 /* Info.plist */,
 				8C171D63294A622400A059F7 /* CountdownsApp.swift */,
 				8C171D65294A622400A059F7 /* ContentView.swift */,
-				8C171D73294B628700A059F7 /* CountdownList.swift */,
-				8C171D71294B61EA00A059F7 /* CountdownDetail.swift */,
-				8C9F08CF294D033200246066 /* CountdownDetailYellow.swift */,
-				8C171D75294B62C500A059F7 /* CountdownEditor.swift */,
-				8C171D77294B62F800A059F7 /* CountdownUpsell.swift */,
-				8C9F0877294BAB6700246066 /* CountdownSubscription.swift */,
 				8C9F0879294BD77400246066 /* fonts */,
 				8C171D67294A622600A059F7 /* Assets.xcassets */,
 				8C171D69294A622600A059F7 /* Preview Content */,
@@ -194,6 +190,51 @@
 				8C171D6A294A622600A059F7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8C6781B02950354400F2B670 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8C6781B12950357100F2B670 /* Home */,
+				8C6781B52950363900F2B670 /* Detail */,
+				8C6781B22950359100F2B670 /* Editor */,
+				8C6781B3295035AD00F2B670 /* Subscription */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8C6781B12950357100F2B670 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8C171D73294B628700A059F7 /* CountdownList.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8C6781B22950359100F2B670 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				8C171D75294B62C500A059F7 /* CountdownEditor.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		8C6781B3295035AD00F2B670 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				8C171D77294B62F800A059F7 /* CountdownUpsell.swift */,
+				8C9F0877294BAB6700246066 /* CountdownSubscription.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		8C6781B52950363900F2B670 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8C171D71294B61EA00A059F7 /* CountdownDetail.swift */,
+				8C9F08CF294D033200246066 /* CountdownDetailYellow.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		8C9F0879294BD77400246066 /* fonts */ = {
@@ -397,6 +438,7 @@
 			files = (
 				8C9F08CC294C1F9500246066 /* CountdownWidget2.swift in Sources */,
 				8C9F08B8294C1A0600246066 /* CountdownUpsell.swift in Sources */,
+				8C6781B4295035BF00F2B670 /* CountdownSubscription.swift in Sources */,
 				8C9F08AB294C18DA00246066 /* CountdownWidgetBundle.swift in Sources */,
 				8C9F08AD294C18DA00246066 /* CountdownWidget.swift in Sources */,
 				8C9F08CE294C241700246066 /* CountdownWidget3.swift in Sources */,
