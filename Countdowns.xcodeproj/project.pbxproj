@@ -16,6 +16,9 @@
 		8C171D76294B62C500A059F7 /* CountdownEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D75294B62C500A059F7 /* CountdownEditor.swift */; };
 		8C171D78294B62F800A059F7 /* CountdownUpsell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D77294B62F800A059F7 /* CountdownUpsell.swift */; };
 		8C5B569729513C96000E8B8B /* RelationshipEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5B569629513C96000E8B8B /* RelationshipEditor.swift */; };
+		8C5B5699295140D7000E8B8B /* EditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5B5698295140D7000E8B8B /* EditorToolbar.swift */; };
+		8C5B569B29514120000E8B8B /* CountdownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5B569A29514120000E8B8B /* CountdownTextField.swift */; };
+		8C5B569D2951418F000E8B8B /* CountdownToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5B569C2951418F000E8B8B /* CountdownToggle.swift */; };
 		8C6781B4295035BF00F2B670 /* CountdownSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F0877294BAB6700246066 /* CountdownSubscription.swift */; };
 		8C6781B7295037C200F2B670 /* CountdownHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6781B6295037C200F2B670 /* CountdownHeader.swift */; };
 		8C6781B9295038B400F2B670 /* BubbleBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6781B8295038B400F2B670 /* BubbleBackground.swift */; };
@@ -110,6 +113,9 @@
 		8C171D75294B62C500A059F7 /* CountdownEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownEditor.swift; sourceTree = "<group>"; };
 		8C171D77294B62F800A059F7 /* CountdownUpsell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUpsell.swift; sourceTree = "<group>"; };
 		8C5B569629513C96000E8B8B /* RelationshipEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipEditor.swift; sourceTree = "<group>"; };
+		8C5B5698295140D7000E8B8B /* EditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbar.swift; sourceTree = "<group>"; };
+		8C5B569A29514120000E8B8B /* CountdownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTextField.swift; sourceTree = "<group>"; };
+		8C5B569C2951418F000E8B8B /* CountdownToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownToggle.swift; sourceTree = "<group>"; };
 		8C6781B6295037C200F2B670 /* CountdownHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownHeader.swift; sourceTree = "<group>"; };
 		8C6781B8295038B400F2B670 /* BubbleBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleBackground.swift; sourceTree = "<group>"; };
 		8C6781BA2950394700F2B670 /* CountdownNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownNumbers.swift; sourceTree = "<group>"; };
@@ -237,6 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				8C171D75294B62C500A059F7 /* CountdownEditor.swift */,
+				8C5B569A29514120000E8B8B /* CountdownTextField.swift */,
+				8C5B569C2951418F000E8B8B /* CountdownToggle.swift */,
+				8C5B5698295140D7000E8B8B /* EditorToolbar.swift */,
 				8C5B569629513C96000E8B8B /* RelationshipEditor.swift */,
 			);
 			path = Editor;
@@ -455,11 +464,14 @@
 				8C6781C529503D3A00F2B670 /* CountdownColors.swift in Sources */,
 				8C171D72294B61EA00A059F7 /* CountdownDetail.swift in Sources */,
 				8C171D64294A622400A059F7 /* CountdownsApp.swift in Sources */,
+				8C5B5699295140D7000E8B8B /* EditorToolbar.swift in Sources */,
 				8C6781BB2950394700F2B670 /* CountdownNumbers.swift in Sources */,
 				8C6781B7295037C200F2B670 /* CountdownHeader.swift in Sources */,
 				8C171D74294B628700A059F7 /* CountdownList.swift in Sources */,
 				8C6781BF29503A3E00F2B670 /* DetailToolbar.swift in Sources */,
+				8C5B569D2951418F000E8B8B /* CountdownToggle.swift in Sources */,
 				8C6781C329503C3900F2B670 /* CardBackground.swift in Sources */,
+				8C5B569B29514120000E8B8B /* CountdownTextField.swift in Sources */,
 				8C6781B9295038B400F2B670 /* BubbleBackground.swift in Sources */,
 				8C9F08D0294D033200246066 /* CountdownDetailYellow.swift in Sources */,
 				8C6781BD295039D400F2B670 /* ProgressCircle.swift in Sources */,

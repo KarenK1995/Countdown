@@ -7,63 +7,6 @@
 
 import SwiftUI
 
-struct EditorToolbar: ToolbarContent {
-    var body: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarLeading) {
-            Image(systemName: "chevron.left")
-                .font(.title2)
-                .foregroundColor(.black)
-        }
-        ToolbarItem(placement: .navigationBarTrailing ) {
-            Button("Save") {}
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.capsule)
-                .font(.custom("Poppins-Medium", size: 15))
-                .tint(CountdownColors.gradientBlue)
-        }
-    }
-}
-
-struct CountdownTextField: View {
-    var label: String
-    var prompt: String
-    
-    var body: some View {
-        Group {
-            Text(label)
-                .font(.custom("Poppins-Medium", size: 16))
-            TextField(label, text: .constant(""), prompt: Text(prompt))
-                .font(.custom("Poppins-Regular", size: 16))
-                .padding(.horizontal)
-                .frame(height: 50)
-                .background {
-                    CardBackground(cornerRadius: 10)
-                }
-                .overlay(alignment: .trailing) {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(CountdownColors.textXGray)
-                        .padding(.trailing)
-                }
-        }
-    }
-}
-
-struct CountdownToggle: View {
-    var label: String
-    @Binding var isOn: Bool
-    
-    var body: some View {
-        Toggle(label, isOn: $isOn)
-            .font(.custom("Poppins-Medium", size: 15))
-            .tint(.blue)
-            .padding(.horizontal)
-            .frame(height: 50)
-            .background {
-                CardBackground(cornerRadius: 10)
-            }
-    }
-}
-
 struct CountdownEditor: View {
     @State private var editingEmoji = false
     @State private var allDayEvent = true
