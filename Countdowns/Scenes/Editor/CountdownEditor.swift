@@ -7,14 +7,32 @@
 
 import SwiftUI
 
-struct CountdownEditor: View {
-    @State private var editingEmoji = false
+struct EditorToolbar: ToolbarContent {
+    var body: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            Image(systemName: "chevron.left")
+                .font(.title2)
+                .foregroundColor(.black)
+        }
+        ToolbarItem(placement: .navigationBarTrailing ) {
+            Button("Save") {}
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                .font(.custom("Poppins-Medium", size: 15))
+                .tint(CountdownColors.gradientBlue)
+        }
+    }
+}
+
+struct CountdownTextField: View {
+    var label: String
+    var prompt: String
     
-    var countdownName: some View {
+    var body: some View {
         Group {
-            Text("Countdown name")
+            Text(label)
                 .font(.custom("Poppins-Medium", size: 16))
-            TextField("Countdown name", text: .constant(""), prompt: Text("Name your countdown"))
+            TextField(label, text: .constant(""), prompt: Text(prompt))
                 .font(.custom("Poppins-Regular", size: 16))
                 .padding(.horizontal)
                 .frame(height: 50)
@@ -27,6 +45,35 @@ struct CountdownEditor: View {
                         .padding(.trailing)
                 }
         }
+    }
+}
+
+struct CountdownToggle: View {
+    var label: String
+    @Binding var isOn: Bool
+    
+    var body: some View {
+        Toggle(label, isOn: $isOn)
+            .font(.custom("Poppins-Medium", size: 15))
+            .tint(.blue)
+            .padding(.horizontal)
+            .frame(height: 50)
+            .background {
+                CardBackground(cornerRadius: 10)
+            }
+    }
+}
+
+struct CountdownEditor: View {
+    @State private var editingEmoji = false
+    @State private var allDayEvent = true
+    @State private var repeatYearly = true
+    @State private var notifyWhenComplete = true
+    @State private var notifyDayBefore = false
+    @State private var notifyWeekBefore = false
+    
+    var countdownName: some View {
+        CountdownTextField(label: "Countdown name", prompt: "Name your countdown")
     }
     
     var countdownDateTime: some View {
@@ -41,14 +88,7 @@ struct CountdownEditor: View {
             
             Text("Countdown time")
                 .font(.custom("Poppins-Medium", size: 16))
-            Toggle("All day", isOn: .constant(false))
-                .font(.custom("Poppins-Medium", size: 15))
-                .tint(.blue)
-                .padding(.horizontal)
-                .frame(height: 50)
-                .background {
-                    CardBackground(cornerRadius: 10)
-                }
+            CountdownToggle(label: "All day", isOn: $allDayEvent)
             DatePicker("Countdown time", selection: .constant(Date.now), displayedComponents: .hourAndMinute)
                 .datePickerStyle(.wheel)
                 .labelsHidden()
@@ -63,30 +103,9 @@ struct CountdownEditor: View {
         Group {
             Text("Remind me")
                 .font(.custom("Poppins-Medium", size: 16))
-            Toggle("When the countdown finishes", isOn: .constant(true))
-                .font(.custom("Poppins-Medium", size: 15))
-                .tint(.blue)
-                .padding(.horizontal)
-                .frame(height: 50)
-                .background {
-                    CardBackground(cornerRadius: 10)
-                }
-            Toggle("1 day before", isOn: .constant(false))
-                .font(.custom("Poppins-Medium", size: 15))
-                .tint(.blue)
-                .padding(.horizontal)
-                .frame(height: 50)
-                .background {
-                    CardBackground(cornerRadius: 10)
-                }
-            Toggle("1 week before", isOn: .constant(false))
-                .font(.custom("Poppins-Medium", size: 15))
-                .tint(.blue)
-                .padding(.horizontal)
-                .frame(height: 50)
-                .background {
-                    CardBackground(cornerRadius: 10)
-                }
+            CountdownToggle(label: "When the countdown finishes", isOn: $notifyWhenComplete)
+            CountdownToggle(label: "1 day before", isOn: $notifyDayBefore)
+            CountdownToggle(label: "1 week before", isOn: $notifyWeekBefore)
         }
     }
     
@@ -104,67 +123,25 @@ struct CountdownEditor: View {
         }
     }
     
-    var photoPicker: some View {
+    var emojiPicker: some View {
         Group {
-            Text("Pick a Photo")
+            Text("Pick an emoji")
                 .font(.custom("Poppins-Medium", size: 16))
-            VStack(spacing: 10) {
-                HStack(spacing: 10) {
-                    Image("1")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(CountdownColors.imageGray)
-                        }
-                        .overlay {
-                            Image(systemName: "checkmark.circle.fill")
-                                .imageScale(.large)
-                                .foregroundColor(.white)
-                        }
-                        .padding(4)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(lineWidth: 2)
-                                .foregroundColor(CountdownColors.linkBlue)
-                        }
-                    Image("2")
-                        .resizable()
-                        .frame(width: 108, height: 108)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                    
-                    Image("3")
-                        .resizable()
-                        .frame(width: 108, height: 108)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
+            Image(systemName: "plus")
+                .imageScale(.small)
+                .font(.title3)
+                .fontWeight(.semibold)
+                .padding()
+                .background {
+                    Circle()
+                        .stroke(lineWidth: 2)
                 }
-                HStack(spacing: 10) {
-                    Image("4")
-                        .resizable()
-                        .frame(width: 108, height: 108)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                    
-                    Image("5")
-                        .resizable()
-                        .frame(width: 108, height: 108)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                    
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(.blue, style: StrokeStyle(lineWidth: 1.5, lineCap: .round, dash: [5, 5]))
-                        .frame(width: 108, height: 108)
-                        .background {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(CountdownColors.placeholderImageBlue)
-                        }
-                        .overlay {
-                            Image("gallery-add")
-                                .resizable()
-                                .frame(width: 17.65, height: 17.65)
-                                .foregroundColor(CountdownColors.linkBlue)
-                        }
+                .foregroundColor(.blue)
+                .onTapGesture {
+                    withAnimation {
+                        editingEmoji = true
+                    }
                 }
-            }
         }
     }
     
@@ -173,61 +150,21 @@ struct CountdownEditor: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     countdownName
-                    
-                    Text("Pick an emoji")
-                        .font(.custom("Poppins-Medium", size: 16))
-                    Image(systemName: "plus")
-                        .imageScale(.small)
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .padding()
-                        .background {
-                            Circle()
-                                .stroke(lineWidth: 2)
-                        }
-                        .foregroundColor(.blue)
-                        .onTapGesture {
-                            withAnimation {
-                                editingEmoji = true
-                            }
-                        }
-                    
+                    emojiPicker
                     countdownDateTime
-                    
                     Group {
                         Text("Repeat")
                             .font(.custom("Poppins-Medium", size: 16))
-                        Toggle("Repeat yearly", isOn: .constant(true))
-                            .font(.custom("Poppins-Medium", size: 15))
-                            .tint(.blue)
-                            .padding(.horizontal)
-                            .frame(height: 50)
-                            .background {
-                                CardBackground(cornerRadius: 10)
-                            }
-                        
+                        CountdownToggle(label: "Repeat yearly", isOn: $repeatYearly)
                         countdownReminders
                     }
-                    
                     countdownColor
-                    photoPicker
                 }
                 .padding(.horizontal)
             }
             .navigationBarBackButtonHidden()
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Image(systemName: "chevron.left")
-                        .font(.title2)
-                        .foregroundColor(.black)
-                }
-                ToolbarItem(placement: .navigationBarTrailing ) {
-                    Button("Save") {}
-                        .buttonStyle(.borderedProminent)
-                        .buttonBorderShape(.capsule)
-                        .font(.custom("Poppins-Medium", size: 15))
-                        .tint(CountdownColors.gradientBlue)
-                }
+                EditorToolbar()
             }
         }
         .disabled(editingEmoji)
