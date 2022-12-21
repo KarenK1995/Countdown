@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0CEB7A29534C26003C3365 /* EmptyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CEB7929534C26003C3365 /* EmptyList.swift */; };
+		8C0CEB7C29534C54003C3365 /* ListToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CEB7B29534C54003C3365 /* ListToolbar.swift */; };
 		8C171D64294A622400A059F7 /* CountdownsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D63294A622400A059F7 /* CountdownsApp.swift */; };
 		8C171D66294A622400A059F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C171D65294A622400A059F7 /* ContentView.swift */; };
 		8C171D68294A622600A059F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C171D67294A622600A059F7 /* Assets.xcassets */; };
@@ -103,6 +105,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C0CEB7929534C26003C3365 /* EmptyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyList.swift; sourceTree = "<group>"; };
+		8C0CEB7B29534C54003C3365 /* ListToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListToolbar.swift; sourceTree = "<group>"; };
 		8C171D60294A622400A059F7 /* Countdowns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdowns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C171D63294A622400A059F7 /* CountdownsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsApp.swift; sourceTree = "<group>"; };
 		8C171D65294A622400A059F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				8C171D73294B628700A059F7 /* CountdownList.swift */,
+				8C0CEB7B29534C54003C3365 /* ListToolbar.swift */,
+				8C0CEB7929534C26003C3365 /* EmptyList.swift */,
 				8C6781C029503B6D00F2B670 /* CountdownCard.swift */,
 				8C6781C229503C3900F2B670 /* CardBackground.swift */,
 				8C6781C429503D3A00F2B670 /* CountdownColors.swift */,
@@ -463,10 +469,12 @@
 				8C171D66294A622400A059F7 /* ContentView.swift in Sources */,
 				8C6781C529503D3A00F2B670 /* CountdownColors.swift in Sources */,
 				8C171D72294B61EA00A059F7 /* CountdownDetail.swift in Sources */,
+				8C0CEB7C29534C54003C3365 /* ListToolbar.swift in Sources */,
 				8C171D64294A622400A059F7 /* CountdownsApp.swift in Sources */,
 				8C5B5699295140D7000E8B8B /* EditorToolbar.swift in Sources */,
 				8C6781BB2950394700F2B670 /* CountdownNumbers.swift in Sources */,
 				8C6781B7295037C200F2B670 /* CountdownHeader.swift in Sources */,
+				8C0CEB7A29534C26003C3365 /* EmptyList.swift in Sources */,
 				8C171D74294B628700A059F7 /* CountdownList.swift in Sources */,
 				8C6781BF29503A3E00F2B670 /* DetailToolbar.swift in Sources */,
 				8C5B569D2951418F000E8B8B /* CountdownToggle.swift in Sources */,
